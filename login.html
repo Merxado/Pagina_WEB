@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Sistema de Joyería</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="login-container">
+  <h1>Sistema de Joyería</h1>
+
+  <!-- Formulario de Login -->
+  <form id="loginForm">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" placeholder="Usuario" id="loginUser" required />
+    <input type="password" placeholder="Contraseña" id="loginPass" required />
+    <button type="submit">Ingresar</button>
+    <p><a href="#" onclick="mostrarRecuperar()">¿Olvidaste tu contraseña?</a></p>
+    <p><a href="#" onclick="mostrarRegistro()">¿No tienes cuenta? Regístrate</a></p>
+  </form>
+
+  <!-- Formulario de Registro -->
+  <form id="registroForm" style="display: none;">
+    <h2>Registrarse</h2>
+    <input type="text" placeholder="Nuevo usuario" required />
+    <input type="email" placeholder="Correo electrónico" required />
+    <input type="password" placeholder="Crear contraseña" required />
+    <button type="submit">Registrar</button>
+    <p><a href="#" onclick="mostrarLogin()">¿Ya tienes cuenta? Inicia sesión</a></p>
+  </form>
+
+  <!-- Formulario de Recuperación -->
+  <form id="recuperarForm" style="display: none;">
+    <h2>Recuperar Contraseña</h2>
+    <input type="email" placeholder="Correo registrado" required />
+    <button type="submit">Enviar enlace</button>
+    <p><a href="#" onclick="mostrarLogin()">Volver al inicio de sesión</a></p>
+  </form>
+</div>
+
+<script>
+  function mostrarRegistro() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registroForm").style.display = "block";
+    document.getElementById("recuperarForm").style.display = "none";
+  }
+
+  function mostrarLogin() {
+    document.getElementById("loginForm").style.display = "block";
+    document.getElementById("registroForm").style.display = "none";
+    document.getElementById("recuperarForm").style.display = "none";
+  }
+
+  function mostrarRecuperar() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registroForm").style.display = "none";
+    document.getElementById("recuperarForm").style.display = "block";
+  }
+
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    // Simula login exitoso
+    const usuario = document.getElementById("loginUser").value;
+    const pass = document.getElementById("loginPass").value;
+    if (usuario === "admin" && pass === "1234") {
+      window.location.href = "index.html"; // redirigir al sistema
+    } else {
+      alert("Usuario o contraseña incorrectos");
+    }
+  });
+</script>
+</body>
+</html>
