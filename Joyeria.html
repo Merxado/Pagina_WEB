@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Inventario de Joyería</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Sistema de Inventario de Joyería</h1>
+    <nav>
+        <ul>
+            <li><button onclick="mostrarSeccion('producto')">Registrar Producto</button></li>
+            <li><button onclick="mostrarSeccion('proveedor')">Registrar Proveedor</button></li>
+            <li><button onclick="mostrarSeccion('compra')">Registrar Compra</button></li>
+            <li><button onclick="mostrarSeccion('inventario')">Inventario</button></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Sección Producto -->
+    <section id="producto" class="seccion">
+        <h2>Registrar Producto</h2>
+        <form id="formProducto">
+            <input type="text" placeholder="Código" name="codigo" required>
+            <input type="text" placeholder="Nombre" name="nombre" required>
+            <input type="text" placeholder="Tipo" name="tipo" required>
+            <input type="number" placeholder="Precio" name="precio" required>
+            <input type="number" placeholder="Stock" name="stock" required>
+            <button type="submit">Guardar Producto</button>
+        </form>
+    </section>
+
+    <!-- Sección Proveedor -->
+    <section id="proveedor" class="seccion">
+        <h2>Registrar Proveedor</h2>
+        <form id="formProveedor">
+            <input type="text" placeholder="ID" name="id" required>
+            <input type="text" placeholder="Nombre" name="nombre" required>
+            <input type="text" placeholder="Teléfono" name="telefono" required>
+            <input type="text" placeholder="Dirección" name="direccion" required>
+            <button type="submit">Guardar Proveedor</button>
+        </form>
+    </section>
+
+    <!-- Sección Compra -->
+    <section id="compra" class="seccion">
+        <h2>Registrar Compra</h2>
+        <form id="formCompra">
+            <input type="text" placeholder="ID Compra" name="id" required>
+            <select name="proveedor" required></select>
+            <select name="producto" required></select>
+            <input type="number" placeholder="Cantidad" name="cantidad" required>
+            <input type="date" name="fecha" required>
+            <button type="submit">Guardar Compra</button>
+        </form>
+    </section>
+
+    <!-- Sección Inventario -->
+    <section id="inventario" class="seccion">
+        <h2>Inventario General</h2>
+        <input type="text" id="buscador" placeholder="Buscar producto o proveedor">
+        <table id="tablaInventario">
+            <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Proveedor</th>
+                <th>Opciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Datos dinámicos -->
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
