@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login - Sistema de Joyería</title>
+  <title>Login - Sistema Joyería</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <div class="login-container">
-  <h1>Sistema de Joyería</h1>
+  <h1>Sistema de invenatario para Joyería</h1>
 
   <!-- Formulario de Login -->
-  <form id="loginForm">
+  <form id="loginForm" method="post">
     <h2>Iniciar Sesión</h2>
     <input type="text" placeholder="Usuario" id="loginUser" required />
     <input type="password" placeholder="Contraseña" id="loginPass" required />
@@ -21,17 +21,17 @@
   </form>
 
   <!-- Formulario de Registro -->
-  <form id="registroForm" style="display: none;">
+  <form id="registroForm" style="display: none;" method="post">
     <h2>Registrarse</h2>
     <input type="text" placeholder="Nuevo usuario" required />
     <input type="email" placeholder="Correo electrónico" required />
-    <input type="password" placeholder="Crear contraseña" required />
+    <input type="password" id="password" placeholder="Crear contraseña" required />
     <button type="submit">Registrar</button>
     <p><a href="#" onclick="mostrarLogin()">¿Ya tienes cuenta? Inicia sesión</a></p>
   </form>
 
   <!-- Formulario de Recuperación -->
-  <form id="recuperarForm" style="display: none;">
+  <form id="recuperarForm" style="display: none;" method="post">
     <h2>Recuperar Contraseña</h2>
     <input type="email" placeholder="Correo registrado" required />
     <button type="submit">Enviar enlace</button>
