@@ -1,0 +1,301 @@
+/* ============================================
+   VARIABLES DE COLOR
+   ============================================ */
+:root {
+  --primary-color: #e74c3c;
+  --primary-hover-color: #c0392b;
+  --secondary-color: #e67e22;
+  --secondary-hover-color: #d35400;
+  --text-color: #2c3e50;
+  --background-gradient: linear-gradient(135deg, #ffe5ec, #ffe2b3);
+  --table-header-bg: #f8c291;
+  --table-row-bg: #f2f2f2;
+}
+
+/* ============================================
+   ESTILOS GENERALES PARA TODO EL SISTEMA
+   ============================================ */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--background-gradient);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Ensures vertical alignment for multiple elements */
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+/* Utility Classes */
+.shadow {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Reusable shadow styling */
+  border-radius: 8px;
+}
+
+/* Contenedor principal reutilizable */
+.container {
+  max-width: 1200px; /* Adds a consistent container width */
+  margin: auto;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s; /* Adds smooth hover effects */
+}
+
+.container:hover {
+  transform: scale(1.02); /* Slightly enlarges the container on hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Enhances shadow on hover */
+}
+
+.main-container,
+.login-container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 450px;
+  margin: auto; /* Centers the containers */
+  transition: transform 0.3s, box-shadow 0.3s; /* Adds smooth hover effects */
+}
+
+.main-container:hover,
+.login-container:hover {
+  transform: scale(1.02); /* Slightly enlarges the container on hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Enhances shadow on hover */
+}
+
+/* Títulos generales */
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+h2 {
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 25px;
+}
+
+/* Texto pequeño (footer, enlaces, etc.) */
+p {
+  text-align: center;
+  margin-top: 10px;
+  color: #7f8c8d;
+}
+
+/* ============================================
+   ENTRADAS Y FORMULARIOS
+   ============================================ */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers form elements */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+  max-width: 300px; /* Improves responsiveness */
+}
+
+input:focus {
+  border-color: #f39c12;
+  outline: none;
+}
+
+input:focus-visible {
+  border-color: #f39c12; /* Improves focus visibility */
+  outline: 2px solid #f39c12;
+}
+
+/* Botones */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: bold; /* Makes button text more prominent */
+  letter-spacing: 0.5px; /* Adds slight spacing to button text */
+}
+
+button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px); /* Adds a subtle lift effect on hover */
+}
+
+button:focus-visible {
+  outline: 2px solid var(--primary-hover-color); /* Adds focus outline for accessibility */
+}
+
+button:active {
+  transform: translateY(0); /* Resets lift effect on click */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Adds shadow on click */
+}
+
+button:disabled {
+  background-color: #ccc; /* Adds disabled state styling */
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Enlaces */
+a {
+  color: #0099ff;
+  text-decoration: none;
+  transition: color 0.3s, text-decoration 0.3s; /* Adds smooth transition for links */
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid #0099ff; /* Adds focus outline for links */
+}
+
+/* ============================================
+   MENÚ DE NAVEGACIÓN (Panel Principal)
+   ============================================ */
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.menu li {
+  display: inline-block;
+  margin: 10px;
+}
+
+.menu a {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: background-color 0.3s; /* Adds smooth transition for menu links */
+  display: inline-block;
+}
+
+.menu a:hover {
+  background-color: var(--secondary-hover-color);
+}
+
+.menu a:focus-visible {
+  outline: 2px solid var(--secondary-hover-color); /* Adds focus outline for menu links */
+}
+
+/* ============================================
+   TABLAS (Historial de compras, inventario, etc.)
+   ============================================ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin: auto; /* Centers the table */
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: var(--table-header-bg);
+  color: var(--text-color);
+}
+
+tr:nth-child(even) {
+  background-color: var(--table-row-bg);
+}
+
+tr:hover {
+  background-color: #f5f5f5; /* Adds hover effect for rows */
+  transition: background-color 0.3s; /* Adds smooth transition for row hover */
+}
+
+tr:focus-visible {
+  outline: 2px solid var(--primary-color); /* Adds focus outline for rows */
+}
+
+/* ============================================
+   PIE DE PÁGINA
+   ============================================ */
+
+footer {
+  margin-top: 30px;
+  text-align: center; /* Ensures footer text is centered */
+  font-size: 0.85em;
+}
+
+/* ============================================
+   DISEÑO RESPONSIVO
+   ============================================ */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px; /* Adjusts container padding for smaller screens */
+  }
+
+  .main-container,
+  .login-container {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"] {
+    max-width: 100%; /* Ensures inputs fit smaller screens */
+  }
+
+  table {
+    font-size: 0.85em; /* Further adjusts table font size */
+    overflow-x: auto; /* Adds horizontal scrolling for tables */
+  }
+
+  .menu ul {
+    flex-direction: column; /* Adjusts menu layout for smaller screens */
+    gap: 10px; /* Adds spacing between menu items */
+  }
+
+  h1, h2 {
+    font-size: 1.6em; /* Slightly increases title size for better readability */
+  }
+
+  button {
+    font-size: 14px; /* Adjusts button font size for smaller screens */
+    padding: 10px; /* Reduces button padding for smaller screens */
+  }
+
+  .container:hover,
+  .main-container:hover,
+  .login-container:hover {
+    transform: none; /* Disables hover effects on smaller screens */
+    box-shadow: none; /* Simplifies styling for smaller screens */
+  }
+
+  p {
+    font-size: 0.85em; /* Adjusts paragraph text size */
+  }
+}
